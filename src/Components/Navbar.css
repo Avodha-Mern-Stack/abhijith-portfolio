@@ -1,0 +1,156 @@
+/* ---------- Navbar Container ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;
+  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 12px 80px;
+  background: linear-gradient(90deg, #0c0a23, #29254f, #1f1e33);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+/* ---------- Nav Menu ---------- */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-menu p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-menu p:hover {
+  color: #ffcc70;
+}
+
+/* ---------- Animated Underline ---------- */
+.underline {
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  margin-top: 2px;
+}
+
+.underline.active {
+  width: 100%;
+}
+
+/* ---------- Connect Button ---------- */
+.nav-connect {
+  padding: 10px 25px;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ---------- Anchor Link ---------- */
+.anchor-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Hamburger Icon ---------- */
+.nav-toggle {
+  display: none;
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 1100;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #0f0c29;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 0;
+    display: none;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-connect {
+    display: none;
+  }
+
+  .nav-menu li {
+    font-size: 18px;
+  }
+
+  .underline {
+    height: 2px;
+  }
+}
