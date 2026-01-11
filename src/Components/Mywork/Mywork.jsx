@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyWork.css';
+import './Mywork.css';
 import mywork_data from '../../assets/mywork_data';
 
 const MyWork = () => {
